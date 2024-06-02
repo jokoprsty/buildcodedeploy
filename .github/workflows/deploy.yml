@@ -10,9 +10,9 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: Create Node Environment  # Sets up Node.js environment.
-          uses: actions/setup-node@v4
-          with: 
-            node-version: 16.x
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 16.x
 
       - name: Install Packages and Build Application  # Installs npm packages and builds the Vue.js application.
         run: |
