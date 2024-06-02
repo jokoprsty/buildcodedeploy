@@ -19,11 +19,6 @@ jobs:
           npm ci
           npm run build
 
-      - name: Build with Jekyll  # Builds the application with Jekyll.
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./dist/
-          destination: ./_site
       - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
