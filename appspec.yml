@@ -7,7 +7,7 @@ files:
 file_exists_behavior: OVERWRITE
 branch_config:
     wip\/.*: ~ 
-    gh-pages:
+    coba:
         deploymentGroupName: latihanCodedeployGroup
         deploymentGroupConfig:
             serviceRoleArn: arn:aws:iam::350251222225:role/latihanRoleGroup

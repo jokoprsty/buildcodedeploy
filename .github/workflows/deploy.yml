@@ -9,15 +9,15 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
-      # - name: Create Node Environment  # Sets up Node.js environment.
-      #   uses: actions/setup-node@v4
-      #   with: 
-      #     node-version: 20.x
+      - name: Create Node Environment  # Sets up Node.js environment.
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20.x
 
-      # - name: Install Packages and Build Application  # Installs npm packages and builds the Vue.js application.
-      #   run: |
-      #     npm ci
-      #     npm run build
+      - name: Install Packages and Build Application  # Installs npm packages and builds the Vue.js application.
+        run: |
+          npm ci
+          npm run build
 
       # - uses: actions/upload-artifact@v4
       #   with:
@@ -31,11 +31,15 @@ jobs:
       #     name: app-build
       #     path: coba
 
-      - uses: xRealNeon/VuePagesAction@1.0.1
-        with:
-          username: 'jokoprsty'
-          reponame: 'buildcodedeploy'
-          token: ${{ secrets.TOKEN_GITHUB }} # Leave this line unchanged
+    # Deploy to local repo
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: coba
+          FOLDER: build
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+
       - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
