@@ -25,11 +25,6 @@ jobs:
           path: dist
       - run: ls dist
       
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: app-build
-          path: coba
 
       # - name: "Configure AWS Credentials" 
       #   uses: aws-actions/configure-aws-credentials@v4.0.2
