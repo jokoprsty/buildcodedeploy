@@ -23,9 +23,8 @@ jobs:
         with:
           name: app-build
           path: dist
-      - run: ls dist
+#      - run: ls dist
       
-
       # - name: "Configure AWS Credentials" 
       #   uses: aws-actions/configure-aws-credentials@v4.0.2
       #   with:
