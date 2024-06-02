@@ -22,8 +22,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: app-build
-          path: coba
-      - run: ls coba
+          path: dist
+      - run: ls dist
       
       - name: Download build artifacts
         uses: actions/download-artifact@v4
