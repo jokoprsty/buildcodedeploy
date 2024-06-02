@@ -23,7 +23,7 @@ jobs:
         with:
           name: app-build
           path: coba
-        run: ls coba
+      - run: ls coba
       
       - name: Download build artifacts
         uses: actions/download-artifact@v4
