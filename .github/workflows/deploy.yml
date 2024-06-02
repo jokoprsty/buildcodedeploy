@@ -28,6 +28,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: app-build
+          path: dist
       - run: ls dist
 
       - name: "Configure AWS Credentials" 
