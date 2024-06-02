@@ -40,7 +40,7 @@ jobs:
           FOLDER: build
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
-      - name: "Configure AWS Credentials" 
+      - name: "Configure AWS Credentialss" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           aws-region: eu-north-1
