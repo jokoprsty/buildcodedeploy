@@ -1,13 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /coba
     destination: /var/www/html/
     overwrite: true
 file_exists_behavior: OVERWRITE
 branch_config:
     wip\/.*: ~ 
-    coba:
+    main:
         deploymentGroupName: latihanCodedeployGroup
         deploymentGroupConfig:
             serviceRoleArn: arn:aws:iam::350251222225:role/latihanRoleGroup

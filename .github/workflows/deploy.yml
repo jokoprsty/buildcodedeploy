@@ -19,26 +19,26 @@ jobs:
           npm ci
           npm run build
 
-      # - uses: actions/upload-artifact@v4
-      #   with:
-      #     name: app-build
-      #     path: dist
-      # - run: ls dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-build
+          path: dist
+      - run: ls dist
       
-      # - name: Download build artifacts
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: app-build
-      #     path: coba
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: app-build
+          path: coba
 
     # Deploy to local repo
-      - name: Deploy
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: coba
-          FOLDER: coba
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+      # - name: Deploy
+      #   uses: s0/git-publish-subdir-action@develop
+      #   env:
+      #     REPO: self
+      #     BRANCH: coba
+      #     FOLDER: coba
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
       - name: "Configure AWS Credentialss" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
