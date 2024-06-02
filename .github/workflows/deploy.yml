@@ -37,7 +37,7 @@ jobs:
         env:
           REPO: self
           BRANCH: coba
-          FOLDER: build
+          FOLDER: coba
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
       - name: "Configure AWS Credentialss" 
