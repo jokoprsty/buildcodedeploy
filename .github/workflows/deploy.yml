@@ -7,12 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: AWS_environment
     steps:
-      - name : Checkout Code
-        uses : actions/checkout@v4
-      - name : Create Node Environment
-        uses: action/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: $(( matrix.node-version))
+          node-version: ${{ matrix.node-version }}
       - name : Install Packages and Build App        
         run: |
           npm install -g @vue/cli yarn
