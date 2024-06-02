@@ -22,14 +22,13 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: app-build
-          path: dist
+          path: ./dist
       
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
           name: app-build
-          path: dist
-      - run: ls dist
+          path: ./dist
 
       - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
